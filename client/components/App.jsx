@@ -1,4 +1,5 @@
 import React from 'react'
+import ShowAlbums from './ShowAlbums'
 
 function App () {
   return (
@@ -7,7 +8,7 @@ function App () {
         <h1>My Collection</h1>
       </header>
       <section className="main">
-        {/* add your code here */}
+        <ShowAlbums />
       </section>
     </>
   )

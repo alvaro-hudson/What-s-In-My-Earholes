@@ -6,9 +6,9 @@ const router = express.Router()
 
 module.exports = router
 
-router.get('./', (req, res) => {
+router.get('/', (req, res) => {
   db.getAlbums()
-    .then(album => {
+    .then((album) => {
       res.json(album)
     })
     .catch((err) => {
