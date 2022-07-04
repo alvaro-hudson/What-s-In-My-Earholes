@@ -9,7 +9,6 @@ export default function ShowAlbums() {
   useEffect(() => {
     return getAlbums()
       .then(list => {
-      console.log(list)
       setAlbums(list)
       
     })
@@ -18,9 +17,13 @@ export default function ShowAlbums() {
   return (
 
     <div className='show-albums'>
-      
+      <h1>React examples</h1>
       {albums && albums.map(album => {
-        return <h1 key={album.id}>{album.album}</h1>
+        return (
+          <>
+            <h2 key={album.id}>{album.album}</h2>
+          </>
+        )
       })}
 
     </div>

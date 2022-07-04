@@ -1,5 +1,6 @@
 import React from 'react'
 import ShowAlbums from './ShowAlbums'
+import ShowAlbumsRedux from './ShowAlbumRedux'
 
 function App () {
   return (
@@ -9,6 +10,7 @@ function App () {
       </header>
       <section className="main">
         <ShowAlbums />
+        <ShowAlbumsRedux/>
       </section>
     </>
   )
