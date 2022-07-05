@@ -15,3 +15,22 @@ router.get('/', (req, res) => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
+
+router.post('/', (req, res) => {
+  const newAlbum = res.body
+  db.addAlbum(newAlbum)
+    .then(idArr => {
+      const id = idArr[0]
+      // eslint-disable-next-line promise/no-nesting
+      db.getOneAlbum(id)
+        .then(album => {
+          res.json(album)
+        })
+        .catch((err) => {
+          res.status(500).send('DATABASE ERROR: ' + err.message)
+        })
+    })
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
