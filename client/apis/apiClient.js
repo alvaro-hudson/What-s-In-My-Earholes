@@ -7,7 +7,7 @@ export function getAlbums() {
   .then((res) => res.body)
 }
 
-export function addAlbum(newAlbum) {
+export function addNewAlbum(newAlbum) {
   return request.post(`${rootUrl}/albums`)
   .send(newAlbum)
   .then(res => res.body)

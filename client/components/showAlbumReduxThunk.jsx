@@ -14,7 +14,7 @@ const dispatch = useDispatch()
   const albums = useSelector(state => state.albums)
 
   return (
-    <div className='show-albums'>
+    <div className='show-albums redux-thunk'>
       <h1>Redux Thunk Album List</h1>
       {albums.map(albums => {
         return (
