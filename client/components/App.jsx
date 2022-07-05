@@ -1,6 +1,7 @@
 import React from 'react'
 import ShowAlbums from './ShowAlbums'
 import ShowAlbumsRedux from './ShowAlbumRedux'
+import ShowAlbumsReduxThunk from './showAlbumReduxThunk'
 
 function App () {
   return (
@@ -11,6 +12,7 @@ function App () {
       <section className="main">
         <ShowAlbums />
         <ShowAlbumsRedux/>
+        <ShowAlbumsReduxThunk />
       </section>
     </>
   )

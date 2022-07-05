@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux'
 function ShowAlbumsRedux() {
 
   const albums = useSelector(state => state.albums)
-  console.log('redux', albums)
 
   return (
     <div>
