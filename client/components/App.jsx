@@ -1,7 +1,8 @@
 import React from 'react'
 // import ShowAlbums from './ShowAlbums'
 // import ShowAlbumsRedux from './ShowAlbumRedux'
-import ShowAlbumsReduxThunk from './showAlbumReduxThunk'
+import ShowAlbumsReduxThunk from './ShowAlbumReduxThunk'
+import AddAlbumForm from './AddAlbumForm'
 
 function App () {
   return (
@@ -13,6 +14,7 @@ function App () {
         {/* <ShowAlbums />
         <ShowAlbumsRedux/> */}
         <ShowAlbumsReduxThunk />
+        <AddAlbumForm />
       </section>
     </>
   )

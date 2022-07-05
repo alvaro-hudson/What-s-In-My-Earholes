@@ -12,7 +12,6 @@ const dispatch = useDispatch()
   },[])
 
   const albums = useSelector(state => state.albums)
-  console.log(albums)
 
   return (
     <div className='show-albums'>
@@ -20,8 +19,8 @@ const dispatch = useDispatch()
       {albums.map(albums => {
         return (
         <>
-          <h2 key={albums.id}>Album: {albums.album}</h2>
-          <ul>
+          <h2>Album: {albums.album}</h2>
+          <ul key={albums.id}>
             <li>Artist: {albums.artist}</li>
             <li>Year: {albums.year}</li>
           </ul>

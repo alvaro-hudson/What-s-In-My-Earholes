@@ -17,14 +17,17 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const newAlbum = res.body
+  const newAlbum = req.body
   db.addAlbum(newAlbum)
-    .then(idArr => {
+    .then((idArr) => {
       const id = idArr[0]
       // eslint-disable-next-line promise/no-nesting
       db.getOneAlbum(id)
-        .then(album => {
+        .then((album) => {
           res.json(album)
+        })
+        .then(() => {
+          res.sendStatus(200)
         })
         .catch((err) => {
           res.status(500).send('DATABASE ERROR: ' + err.message)

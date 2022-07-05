@@ -1,17 +1,25 @@
 export const RECEIVE_ALBUMS = 'RECIEVE_ALBUMS'
-import { getAlbums } from "../apis/apiClient"
+export const ADD_ALBUM = 'ADD_ALBUM'
+import { getAlbums } from '../apis/apiClient'
 
 export function receiveAlbums(albums) {
   return {
     type: RECEIVE_ALBUMS,
-    payload: albums
+    payload: albums,
+  }
+}
+
+export function addAlbum(newAlbum) {
+  return {
+    type: ADD_ALBUM,
+    payload: newAlbum,
   }
 }
 
 export function fetchAlbums() {
   return (dispatch) => {
     return getAlbums()
-      .then(res => {
+      .then((res) => {
         dispatch(receiveAlbums(res))
       })
       .catch((err) => {

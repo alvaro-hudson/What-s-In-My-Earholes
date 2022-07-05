@@ -9,7 +9,6 @@ export function getAlbums() {
 
 export function addAlbum(newAlbum) {
   return request.post(`${rootUrl}/albums`)
-  .post(newAlbum)
   .send(newAlbum)
   .then(res => res.body)
 }
