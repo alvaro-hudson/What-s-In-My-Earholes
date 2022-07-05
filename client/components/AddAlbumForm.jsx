@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addAlbum } from '../actions/index'
 
 function AddAlbumForm() {
@@ -20,8 +20,8 @@ const handleChange = (e) => {
 }
 
 const handleSubmit = (e) => {
-  e.prevent.default()
-  return dispatch(addAlbum(newAlbum))
+  e.preventDefault()
+  dispatch(addAlbum(newAlbum))
 }
 
 console.log(newAlbum)

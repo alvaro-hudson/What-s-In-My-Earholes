@@ -1,5 +1,5 @@
 import React from 'react'
-import ShowAlbums from './ShowAlbums'
+// import ShowAlbums from './ShowAlbums'
 // import ShowAlbumsRedux from './ShowAlbumRedux'
 import ShowAlbumsReduxThunk from './ShowAlbumReduxThunk'
 import AddAlbumForm from './AddAlbumForm'
@@ -11,7 +11,7 @@ function App () {
         <h1>My Collection</h1>
       </header>
       <section className="main">
-        <ShowAlbums />
+        {/* <ShowAlbums /> */}
         {/* <ShowAlbumsRedux/> */}
         <ShowAlbumsReduxThunk />
         <AddAlbumForm />
