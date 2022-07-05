@@ -6,6 +6,7 @@ function AddAlbumForm() {
 
 const dispatch = useDispatch()
 
+const [form, showForm] = useState(null)
 const [newAlbum, setNewAlbum] = useState({
   album: '',
   artist: '',
@@ -22,6 +23,11 @@ const handleChange = (e) => {
 const handleSubmit = (e) => {
   e.preventDefault()
   dispatch(addAlbum(newAlbum))
+  showForm(null)
+}
+
+const handleClick = () => {
+  showForm(true)
 }
 
 console.log(newAlbum)
@@ -29,7 +35,8 @@ console.log(newAlbum)
   return(
     <div className='add-Album-Form'>
       <h2>Add an album to the list</h2>
-      <form onSubmit={handleSubmit}>
+      <button onClick={handleClick}>Click here to add</button>
+      {form && <form onSubmit={handleSubmit}>
         <label htmlFor="album">Album title: </label>
         <input type="text" id="album" name="album" onChange={handleChange}/>
         <label htmlFor="artist">Artist: </label>
@@ -37,7 +44,7 @@ console.log(newAlbum)
         <label htmlFor="year">Year Released: </label>
         <input type="text" id="year" name="year" onChange={handleChange}/>
         <button>Add Album</button>
-      </form>
+      </form>}
     </div>
   )
 }

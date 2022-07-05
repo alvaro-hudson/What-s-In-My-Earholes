@@ -23,6 +23,7 @@ const dispatch = useDispatch()
           <ul key={albums.id}>
             <li>Artist: {albums.artist}</li>
             <li>Year: {albums.year}</li>
+            {/* <DeleteAlbum/> */}
           </ul>
         </>
       )})}
