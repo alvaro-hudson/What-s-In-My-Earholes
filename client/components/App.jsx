@@ -1,6 +1,6 @@
 import React from 'react'
-import ShowAlbums from './ShowAlbums'
-import ShowAlbumsRedux from './ShowAlbumRedux'
+// import ShowAlbums from './ShowAlbums'
+// import ShowAlbumsRedux from './ShowAlbumRedux'
 import ShowAlbumsReduxThunk from './showAlbumReduxThunk'
 
 function App () {
@@ -10,8 +10,8 @@ function App () {
         <h1>My Collection</h1>
       </header>
       <section className="main">
-        <ShowAlbums />
-        <ShowAlbumsRedux/>
+        {/* <ShowAlbums />
+        <ShowAlbumsRedux/> */}
         <ShowAlbumsReduxThunk />
       </section>
     </>

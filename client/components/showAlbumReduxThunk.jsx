@@ -15,11 +15,18 @@ const dispatch = useDispatch()
   console.log(albums)
 
   return (
-    <div>
+    <div className='show-albums'>
       <h1>Redux Thunk Album List</h1>
       {albums.map(albums => {
-        return <h2 key={albums.id}>{albums.album}</h2>
-      })}
+        return (
+        <>
+          <h2 key={albums.id}>Album: {albums.album}</h2>
+          <ul>
+            <li>Artist: {albums.artist}</li>
+            <li>Year: {albums.year}</li>
+          </ul>
+        </>
+      )})}
     </div>
   )
 }

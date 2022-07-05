@@ -7,7 +7,7 @@ function ShowAlbumsRedux() {
   const albums = useSelector(state => state.albums)
 
   return (
-    <div>
+    <div className='show-albums'>
       <h1>Redux examples:</h1>
       {albums.map(albums => {
         return ( 

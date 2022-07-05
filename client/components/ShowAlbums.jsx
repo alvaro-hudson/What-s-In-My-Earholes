@@ -18,10 +18,10 @@ export default function ShowAlbums() {
 
     <div className='show-albums'>
       <h1>React examples</h1>
-      {albums && albums.map(album => {
+      {albums && albums.map(albums => {
         return (
           <>
-            <h2 key={album.id}>{album.album}</h2>
+            <h2 key={albums.id}>{albums.album}</h2>
           </>
         )
       })}
