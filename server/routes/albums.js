@@ -34,3 +34,14 @@ router.post('/', (req, res) => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
+
+router.delete('/:id', (req, res) => {
+  const id = req.params.id
+  db.deleteAlbum(id)
+    .then((del) => {
+      res.json(del)
+    })
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})

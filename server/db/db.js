@@ -15,8 +15,15 @@ function getOneAlbum(id, db = connection) {
     .first()
 }
 
+function deleteAlbum(id, db = connection) {
+  return db('albums')
+    .del()
+    .where('id', id)
+}
+
 module.exports = {
   getAlbums,
   addAlbum,
-  getOneAlbum
+  getOneAlbum,
+  deleteAlbum
 }

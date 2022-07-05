@@ -12,3 +12,8 @@ export function addNewAlbum(newAlbum) {
   .send(newAlbum)
   .then(res => res.body)
 }
+
+export function deleteAlbum(id) {
+  return request.del(`${rootUrl}/${id}`)
+  .then(res => res)
+}
