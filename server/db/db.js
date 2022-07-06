@@ -21,9 +21,18 @@ function deleteAlbum(id, db = connection) {
     .where('id', id)
 }
 
+function updateAlbum(id, details, db = connection) {
+  return db('albums')
+    .update(details)
+    .where('id', id)
+}
+
+
+
 module.exports = {
   getAlbums,
   addAlbum,
   getOneAlbum,
-  deleteAlbum
+  deleteAlbum,
+  updateAlbum
 }

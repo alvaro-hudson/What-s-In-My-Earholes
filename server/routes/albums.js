@@ -45,3 +45,15 @@ router.delete('/:id', (req, res) => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
+
+router.patch('/:id', (req, res) => {
+  const details = req.body
+  const id = req.params.id
+  db.updateAlbum(id, details)
+    .then(() => {
+      res.sendStatus(200)
+    })
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})

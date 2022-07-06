@@ -3,8 +3,6 @@ import { useDispatch } from 'react-redux'
 import { removeAlbum } from '../actions'
 
 function DeleteAlbum({ id }) {
-
-  console.log(id)
   
   const dispatch = useDispatch()
 

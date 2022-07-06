@@ -1,19 +1,25 @@
 import request from 'superagent'
 
-const rootUrl = '/api/v1'
+const rootUrl = '/api/v1/albums'
 
 export function getAlbums() {
-  return request.get(`${rootUrl}/albums`)
-  .then((res) => res.body)
+  return request.get(rootUrl).then((res) => res.body)
 }
 
 export function addNewAlbum(newAlbum) {
-  return request.post(`${rootUrl}/albums`)
-  .send(newAlbum)
-  .then(res => res.body)
+  return request
+    .post(rootUrl)
+    .send(newAlbum)
+    .then((res) => res.body)
 }
 
 export function deleteAlbum(id) {
-  return request.del(`${rootUrl}/albums/${id}`)
-  .then(res => res)
+  return request.del(`${rootUrl}/${id}`).then((res) => res)
+}
+
+export function updateAlbum(id, details) {
+  return request
+    .patch(`${rootUrl}/${id}`)
+    .send(details)
+    .then((res) => res)
 }
