@@ -36,10 +36,10 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-  const id = req.params.id
+  const id = Number(req.params.id)
   db.deleteAlbum(id)
-    .then((del) => {
-      res.json(del)
+    .then(() => {
+      res.sendStatus(200)
     })
     .catch((err) => {
       res.status(500).send('DATABASE ERROR: ' + err.message)

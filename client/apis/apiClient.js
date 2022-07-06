@@ -14,6 +14,6 @@ export function addNewAlbum(newAlbum) {
 }
 
 export function deleteAlbum(id) {
-  return request.del(`${rootUrl}/${id}`)
+  return request.del(`${rootUrl}/albums/${id}`)
   .then(res => res)
 }

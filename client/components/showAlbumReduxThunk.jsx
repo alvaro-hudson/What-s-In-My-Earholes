@@ -17,14 +17,14 @@ const dispatch = useDispatch()
   return (
     <div className='show-albums redux-thunk'>
       <h1>Redux Thunk Album List</h1>
-      {albums.map(albums => {
+      {albums.map(album => {
         return (
         <>
-          <h2>Album: {albums.album}</h2>
-          <ul key={albums.id}>
-            <li>Artist: {albums.artist}</li>
-            <li>Year: {albums.year}</li>
-            <DeleteAlbum/>
+          <h2>Album: {album.album}</h2>
+          <ul key={album.id}>
+            <li>Artist: {album.artist}</li>
+            <li>Year: {album.year}</li>
+            <DeleteAlbum id={album.id}/>
           </ul>
         </>
       )})}
