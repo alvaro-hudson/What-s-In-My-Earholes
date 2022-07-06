@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { updateAlbums } from '../actions/index'
 
-function UpdateAlbum({ id }) {
+function UpdateAlbum({ data }) {
   const dispatch = useDispatch()
-  const albums = useSelector(state => state.albums)
-  const state = albums[id - 1]
+  const { id, album, artist, year } = data
 
   const [button, showButton] = useState(null)
-  const [details, updateDetails] = useState(state)
+  const [details, updateDetails] = useState({
+    album: album,
+    artist: artist,
+    year: year
+  })
 
-  console.log(details)
+  console.log('details', details)
 
   const firstClick = () => {
     showButton(true)
@@ -18,7 +21,7 @@ function UpdateAlbum({ id }) {
 
   const changeHandler = (e) => {
     updateDetails({
-      ...state,
+      ...details,
       [e.target.name]: e.target.value
     })
   }

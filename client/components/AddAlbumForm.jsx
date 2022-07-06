@@ -29,8 +29,6 @@ const handleSubmit = (e) => {
 const handleClick = () => {
   showForm(true)
 }
-
-console.log(newAlbum)
   
   return(
     <div className='add-Album-Form'>
