@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { fetchAlbums } from '../actions/index'
 import { useSelector, useDispatch } from 'react-redux'
 import DeleteAlbum from './DeleteAlbum'
+import UpdateAlbum from './UpdateAlbum'
 
 
 function ShowAlbumsReduxThunk() {
@@ -25,6 +26,7 @@ const dispatch = useDispatch()
             <li>Artist: {album.artist}</li>
             <li>Year: {album.year}</li>
             <DeleteAlbum id={album.id}/>
+            <UpdateAlbum id={album.id}/>
           </ul>
         </>
       )})}

@@ -1,7 +1,8 @@
 export const RECEIVE_ALBUMS = 'RECIEVE_ALBUMS'
 export const ADD_ALBUM = 'ADD_ALBUM'
 export const DEL_ALBUM = 'DEL_ALBUM'
-import { getAlbums, addNewAlbum, deleteAlbum } from '../apis/apiClient'
+export const UPDATE_ALBUM = 'UPDATE_ALBUM'
+import { getAlbums, addNewAlbum, deleteAlbum, updateAlbum } from '../apis/apiClient'
 
 export function receiveAlbums(albums) {
   return {
@@ -21,6 +22,13 @@ export function delAlbum(id) {
   return {
     type: DEL_ALBUM,
     payload: id
+  }
+}
+
+export function updAlbum(id, details) {
+  return {
+    type: UPDATE_ALBUM,
+    payload: {id, details}
   }
 }
 
@@ -51,11 +59,23 @@ export function pushAlbum(newAlbum) {
 export function removeAlbum(id) {
   return (dispatch) => {
     return deleteAlbum(id)
-     .then(() =>{
+     .then(() => {
       dispatch(delAlbum(id))
      })
      .catch((err) => {
       console.log(err.message)
     })
+  }
+}
+
+export function updateAlbums(id, details) {
+  return (dispatch) => {
+    return updateAlbum(id, details)
+      .then(() => {
+        dispatch(updAlbum(id, details))
+      })
+      .catch((err) => {
+        console.log(err.message)
+      })
   }
 }
