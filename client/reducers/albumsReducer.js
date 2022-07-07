@@ -15,8 +15,15 @@ const albumsReducer = (state = [], action) => {
     case DEL_ALBUM:
       return state.filter((album) => album.id !== payload)
     case UPDATE_ALBUM:
-      console.log(payload)
-        return state
+      return state.map((albums) => {
+        const { album, artist, year } = payload.details
+        if (albums.id === payload.id) {
+          albums.album = album
+          albums.artist = artist
+          albums.year = year
+        }
+        return albums
+      })
     default:
       return state
   }

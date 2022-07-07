@@ -18,16 +18,17 @@ const dispatch = useDispatch()
   return (
     <div className='show-albums redux-thunk'>
       <h1>Redux Thunk Album List</h1>
-      {albums.map(albums => {
+      {albums.map(data => {
+        console.log('data', data)
         return (
         <>
-          <h2>Album: {albums.album}</h2>
-          <ul key={albums.id}>
-            <li>Artist: {albums.artist}</li>
-            <li>Year: {albums.year}</li>
-            <DeleteAlbum id={albums.id}/>
-            <UpdateAlbum data={albums}/>
+          <h2>Album: {data.album}</h2>
+          <ul key={data.id}>
+            <li>Artist: {data.artist}</li>
+            <li>Year: {data.year}</li>
           </ul>
+          <DeleteAlbum id={data.id}/>
+          <UpdateAlbum data={data}/>
         </>
       )})}
     </div>
