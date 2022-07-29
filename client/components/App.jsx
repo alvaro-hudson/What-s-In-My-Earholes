@@ -1,8 +1,6 @@
 import React from 'react'
-// import ShowAlbums from './ShowAlbums'
-// import ShowAlbumsRedux from './ShowAlbumRedux'
-import ShowAlbumsReduxThunk from './ShowAlbumReduxThunk'
-import AddAlbumForm from './AddAlbumForm'
+import ShowAlbums from './ShowAlbums'
+import { Routes, Route } from "react-router-dom"
 
 function App () {
   return (
@@ -11,11 +9,13 @@ function App () {
         <h1>My Collection</h1>
       </header>
       <section className="main">
-        {/* <ShowAlbums /> */}
         {/* <ShowAlbumsRedux/> */}
-        <ShowAlbumsReduxThunk />
-        <AddAlbumForm />
       </section>
+      <Routes>
+        {/* <Route path="/" element={ <Home /> }/> */}
+        <Route path="/myalbums" element={ <ShowAlbums /> }/>
+        
+      </Routes>
     </>
   )
 }
