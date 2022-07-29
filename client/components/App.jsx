@@ -1,6 +1,7 @@
 import React from 'react'
 import ShowAlbums from './ShowAlbums'
 import { Routes, Route } from "react-router-dom"
+import Home from './Home'
 
 function App () {
   return (
@@ -9,13 +10,11 @@ function App () {
         <h1>My Collection</h1>
       </header>
       <section className="main">
-        {/* <ShowAlbumsRedux/> */}
-      </section>
       <Routes>
-        {/* <Route path="/" element={ <Home /> }/> */}
+        <Route path="/" element={ <Home /> }/>
         <Route path="/myalbums" element={ <ShowAlbums /> }/>
-        
       </Routes>
+      </section>
     </>
   )
 }

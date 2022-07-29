@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { fetchAlbums } from '../actions/index'
 import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import DeleteAlbum from './DeleteAlbum'
 import UpdateAlbum from './UpdateAlbum'
 import AddAlbumForm from './AddAlbumForm'
@@ -19,6 +20,9 @@ const dispatch = useDispatch()
   return (
     <div className='show-albums redux-thunk'>
       <h1>Redux Thunk Album List</h1>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
       {albums.map(data => {
         console.log('data', data)
         return (
