@@ -1,0 +1,70 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+}
+
+.about-info {
+
+  background-color: antiquewhite;
+  padding: 2em;
+  flex-grow: 0;
+
+  h1, p {
+    text-align: center;
+  }
+
+}
+
+.home-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 1;
+
+  button {
+    font-size: 2.5em;
+    padding: .5em;
+    border: none;
+    border-radius: 5px;
+    background-color: #f4511e;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  button:hover span {
+    padding-right: 25px;
+  }
+  
+  button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .friends-btn:hover {
+    background-color:cadetblue;
+  }
+
+  .my-btn:hover {
+    background-color:cornflowerblue;
+  }
+
+}

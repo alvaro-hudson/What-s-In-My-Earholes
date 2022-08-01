@@ -1,20 +1,12 @@
+@use './home.scss';
+
 body {
-  position: absolute;
-  top: 0;
-  left: 0;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  box-sizing: border-box;
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.show-albums {
-  border: 1px solid black;
-}
-
-.react {
-  background-color: aliceblue;
-}
-
-.redux-thunk {
-  background-color: bisque;
+.main {
+  margin: 5em;
 }

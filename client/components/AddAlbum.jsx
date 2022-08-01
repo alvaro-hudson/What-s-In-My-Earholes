@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch} from 'react-redux'
 import { pushAlbum } from '../actions/index'
 
-function AddAlbumForm() {
+function AddAlbum() {
 
 const dispatch = useDispatch()
 
@@ -47,4 +47,4 @@ const handleClick = () => {
   )
 }
 
-export default AddAlbumForm
+export default AddAlbum

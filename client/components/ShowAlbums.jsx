@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import DeleteAlbum from './DeleteAlbum'
 import UpdateAlbum from './UpdateAlbum'
-import AddAlbumForm from './AddAlbumForm'
 
 
 function ShowAlbums() {
@@ -36,7 +35,7 @@ const dispatch = useDispatch()
           <UpdateAlbum data={data}/>
         </>
       )})}
-      <AddAlbumForm />
+      <Link to="/addalbum"><button>Add a new album</button></Link>
     </div>
   )
 }
