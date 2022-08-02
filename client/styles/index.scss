@@ -1,4 +1,9 @@
 @use './home.scss';
+@use './header.scss';
+
+* {
+  margin: 0;
+}
 
 body {
   margin: 0;
@@ -7,6 +12,4 @@ body {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.main {
-  margin: 5em;
-}
+

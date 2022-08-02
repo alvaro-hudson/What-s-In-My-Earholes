@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import DeleteAlbum from './DeleteAlbum'
 import UpdateAlbum from './UpdateAlbum'
+import Header from './Header'
 
 
 function ShowAlbums() {
@@ -17,26 +18,26 @@ const dispatch = useDispatch()
   const albums = useSelector(state => state.albums)
 
   return (
-    <div className='show-albums redux-thunk'>
-      <h1>Redux Thunk Album List</h1>
-      <Link to="/">
-        <button>Home</button>
-      </Link>
-      {albums.map(data => {
-        console.log('data', data)
-        return (
-        <>
-          <h2>Album: {data.album}</h2>
-          <ul key={data.id}>
-            <li>Artist: {data.artist}</li>
-            <li>Year: {data.year}</li>
-          </ul>
-          <DeleteAlbum id={data.id}/>
-          <UpdateAlbum data={data}/>
-        </>
-      )})}
-      <Link to="/addalbum"><button>Add a new album</button></Link>
-    </div>
+    <>
+      <Header/>
+      <div className='show-albums redux-thunk'>
+        {albums.map(data => {
+          console.log('data', data)
+          return (
+          <>
+            <h2>Album: {data.album}</h2>
+            <ul key={data.id}>
+              <li>Artist: {data.artist}</li>
+              <li>Year: {data.year}</li>
+            </ul>
+            <DeleteAlbum id={data.id}/>
+            <UpdateAlbum data={data}/>
+          </>
+        )})}
+        <Link to="/addalbum"><button>Add a new album</button></Link>
+      </div>
+    </>
+   
   )
 }
 
