@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom'
 import DeleteAlbum from './DeleteAlbum'
 import UpdateAlbum from './UpdateAlbum'
 import Header from './Header'
+import AlbumCard from './AlbumCard'
 
 
 function ShowAlbums() {
 
 const dispatch = useDispatch()
 
-const [options, showOptions] = useState(false)
+// const [options, showOptions] = useState(false)
 
   useEffect(() => {
     return dispatch(fetchAlbums())
@@ -19,9 +20,9 @@ const [options, showOptions] = useState(false)
 
   const albums = useSelector(state => state.albums)
 
-  const handleClick = () => {
-    showOptions(state => !state)
-  }
+  // const handleClick = () => {
+  //   showOptions(state => !state)
+  // }
 
   return (
     <>
@@ -29,16 +30,17 @@ const [options, showOptions] = useState(false)
       <div className='show-albums'>
         {albums.map(data => {
           return (
-            <div id={data.id} key={data.id} className='album-info' onClick={handleClick}>
-              <h2>Album: {data.album}</h2>
-              <ul key={data.id}>
-              <li>Artist: {data.artist}</li>
-              <li>Year: {data.year}</li>
-              </ul>
-              <p>↓</p>
-              {options && <DeleteAlbum id={data.id}/>}
-              {options && <UpdateAlbum data={data}/>}
-            </div>
+            <AlbumCard key={data.id} data={data}/>
+            // <div id={data.id} key={data.id} className='album-info' onClick={handleClick}>
+            //   <h2>Album: {data.album}</h2>
+            //   <ul key={data.id}>
+            //   <li>Artist: {data.artist}</li>
+            //   <li>Year: {data.year}</li>
+            //   </ul>
+            //   <p>↓</p>
+            //   {options && <DeleteAlbum id={data.id}/>}
+            //   {options && <UpdateAlbum data={data}/>}
+            // </div>
         )})}
         <Link to="/addalbum"><button>Add a new album</button></Link>
       </div>
