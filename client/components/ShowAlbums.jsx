@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { fetchAlbums } from '../actions/index'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import DeleteAlbum from './DeleteAlbum'
-import UpdateAlbum from './UpdateAlbum'
 import Header from './Header'
 import AlbumCard from './AlbumCard'
 
@@ -31,16 +29,6 @@ const dispatch = useDispatch()
         {albums.map(data => {
           return (
             <AlbumCard key={data.id} data={data}/>
-            // <div id={data.id} key={data.id} className='album-info' onClick={handleClick}>
-            //   <h2>Album: {data.album}</h2>
-            //   <ul key={data.id}>
-            //   <li>Artist: {data.artist}</li>
-            //   <li>Year: {data.year}</li>
-            //   </ul>
-            //   <p>↓</p>
-            //   {options && <DeleteAlbum id={data.id}/>}
-            //   {options && <UpdateAlbum data={data}/>}
-            // </div>
         )})}
         <Link to="/addalbum"><button>Add a new album</button></Link>
       </div>
