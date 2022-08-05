@@ -1,0 +1,27 @@
+.show-albums {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.album-info {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  line-height: 2em;
+  background-color: lavender;
+  border-radius: 5%;
+}
+
+.album-info:hover {
+  transition: 0.1s;
+  box-shadow: 1;
+  background-color: orange;
+}
