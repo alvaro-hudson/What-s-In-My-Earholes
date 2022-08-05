@@ -13,8 +13,6 @@ function UpdateAlbum({ data }) {
     year: year
   })
 
-  console.log('details', details)
-
   const firstClick = () => {
     showButton(true)
   }

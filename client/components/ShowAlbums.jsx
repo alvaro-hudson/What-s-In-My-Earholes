@@ -19,12 +19,8 @@ const [options, showOptions] = useState(false)
 
   const albums = useSelector(state => state.albums)
 
-  const handleMouseEnter = () => {
-    showOptions(true)
-  }
-
-  const handleMouseLeave = () => {
-    showOptions(false)
+  const handleClick = () => {
+    showOptions(state => !state)
   }
 
   return (
@@ -33,12 +29,13 @@ const [options, showOptions] = useState(false)
       <div className='show-albums'>
         {albums.map(data => {
           return (
-            <div key={data.id} className='album-info' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <div id={data.id} key={data.id} className='album-info' onClick={handleClick}>
               <h2>Album: {data.album}</h2>
               <ul key={data.id}>
               <li>Artist: {data.artist}</li>
               <li>Year: {data.year}</li>
               </ul>
+              <p>↓</p>
               {options && <DeleteAlbum id={data.id}/>}
               {options && <UpdateAlbum data={data}/>}
             </div>
